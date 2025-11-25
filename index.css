@@ -1,134 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javon Harper – Portfolio</title>
-    <link rel="stylesheet" href="index.css">
-</head>
+:root{
+    --bg:#F5E6D3;          /* Tan background */
+    --bg-light:#F9EFE2;    /* Light tan */
+    --card:#FFFFFF;        /* White card */
+    --accent:#C89F5B;      /* Gold accent */
+    --muted:#6B6B6B;       /* Subtle gray text */
+    --text:#2B2B2B;        /* Main dark text */
+    --container-padding:1.25rem;
+    --max-width:1000px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
 
-<body>
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    background:var(--bg);   /* T A N  B A C K G R O U N D */
+    color:var(--text);
+    line-height:1.6;
+}
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <h1 class="site-title">Javon Harper</h1>
-            <nav class="main-nav">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+/* layout */
+.container{
+    max-width:var(--max-width);
+    margin:0 auto;
+    padding:var(--container-padding);
+}
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <h2>Data & Product Analyst · Master Data Governance · Process Optimization</h2>
-            <p>Turning complex data into strategies that drive accuracy, automation, and operational efficiency.</p>
-            <a class="cta" href="https://www.jeharperportfolio.com/" target="_blank">Visit Full Portfolio</a>
-        </div>
-    </section>
+/* header */
+.site-header{
+    background:var(--bg-light);
+    border-bottom:1px solid #E3D3BF;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+.header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.site-title{
+    margin:0;
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--text);
+}
+.main-nav a{
+    color:var(--text);
+    text-decoration:none;
+    margin-left:1rem;
+    font-weight:500;
+}
+.main-nav a:hover{
+    color:var(--accent);
+}
 
-    <!-- About -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                Insight-driven Data & Product Analyst with 5+ years of experience across product, data analytics,
-                and operations. Strong background in SQL, Python, Tableau, Power BI, and master data governance.
-                I specialize in transforming messy data into structured systems, workflows, and dashboards that
-                reduce errors, improve decision-making, and scale with the business.
-            </p>
-        </div>
-    </section>
+/* hero */
+.hero{
+    padding:4rem 0;
+    text-align:left;
+}
+.hero h2{
+    font-size:2rem;
+    margin:0 0 .5rem;
+    color:var(--text);
+}
+.hero p{
+    margin:0 0 1rem;
+    color:var(--muted);
+}
+.cta{
+    display:inline-block;
+    background:var(--accent);
+    color:white;
+    padding:.6rem 1.2rem;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+}
 
-    <!-- Skills -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul class="skill-list">
-                <li>SQL</li>
-                <li>Python</li>
-                <li>Power BI</li>
-                <li>Tableau</li>
-                <li>PIM / ERP</li>
-                <li>Microsoft Fabric</li>
-                <li>A/B Testing</li>
-                <li>Product Analytics</li>
-                <li>Workflow Automation</li>
-                <li>Data Governance</li>
-            </ul>
-        </div>
-    </section>
+/* skills & sections */
+.about, .skills{
+    padding:2rem 0;
+}
+.skill-list{
+    list-style:none;
+    padding:0;
+    margin:1rem 0 0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+}
+.skill-list li{
+    background:var(--card);
+    padding:.5rem .75rem;
+    border-radius:999px;
+    border:1px solid #E5D4BC;
+}
 
-    <!-- Experience -->
-    <section id="experience" class="about">
-        <div class="container">
-            <h2>Experience</h2>
+/* footer */
+.site-footer{
+    padding:1.25rem;
+    background:var(--bg-light);
+    text-align:center;
+    color:var(--muted);
+    border-top:1px solid #E3D3BF;
+}
 
-            <h3>Master Data Analyst – Safety Test & Equipment Co.</h3>
-            <p>
-                Manage 100K+ SKUs across ERP/PIM systems. Built the company’s Data Governance Program,
-                automated vendor pricing, and created dashboards for inventory, margins, parity, and obsolete items.
-                Reduced pricing update time from 1 week to 1 day and increased task visibility by 40% using Wrike.
-            </p>
+/* mobile */
+@media (max-width:700px){
+    .header-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    .main-nav a{
+        margin-left:0;
+        margin-right:.75rem;
+    }
+}
 
-            <h3>Operations Analyst – OneH2</h3>
-            <p>
-                Built SQL-connected dashboards for $8.8M of assets, automated BOLs, created hydrogen usage
-                forecasting models saving $1.2M, and integrated Wrike/UpKeep/HEM workflows.
-            </p>
-
-            <h3>Data Analyst Intern – Greenville Fire-Rescue</h3>
-            <p>
-                Built SQL + Python models for KPI analysis, automated Tableau dashboards, and created GIS-based
-                readiness and resource allocation analysis.
-            </p>
-
-            <h3>Data Analyst Apprentice – New Apprenticeship</h3>
-            <p>
-                Developed Tableau dashboards, customer segmentation, and SQL/Python-driven data insights.
-            </p>
-
-            <h3>Supply Chain Analyst – United States Marine Corps</h3>
-            <p>
-                Conducted inventory forecasting, ERP reconciliation, and high-accuracy cycle counts across 7 squadrons.
-                Improved mission readiness and reduced delays in critical supply chains.
-            </p>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="about">
-        <div class="container">
-            <h2>Projects</h2>
-            <p>See full case studies at <a href="https://www.jeharperportfolio.com/" target="_blank">JEHarperPortfolio.com</a></p>
-
-            <ul>
-                <li><strong>Master Data Governance Program:</strong> Full-cycle product data structure, naming standards, vendor onboarding & lifecycle.</li>
-                <li><strong>Inventory Health Dashboard:</strong> Aging buckets, stock parity, dead stock, cost vs price trends.</li>
-                <li><strong>Hydrogen Forecasting Model:</strong> Predictive model saving over $1.2M annually.</li>
-                <li><strong>ERP–PIM–Power BI Workflow:</strong> Automated item request + reporting system.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="about">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Email: <strong>javonharpe15@yahoo.com</strong></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/jeharper25/" target="_blank">linkedin.com/in/jeharper25</a></p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <p>© 2025 Javon Harper. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
